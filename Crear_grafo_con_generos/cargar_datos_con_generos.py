@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 import sys #para salir del programa si hay error
 
-#Vamos a mapear los "subgéneros" a 8 géneros principales
+#Vamos a mapear los géneros a 8 "super-géneros" principales
 mapa_generos = {
     'techno': 'ELECTRONIC', 'house': 'ELECTRONIC', 'edm': 'ELECTRONIC',
     'electro': 'ELECTRONIC', 'dubstep': 'ELECTRONIC', 'trance': 'ELECTRONIC',
