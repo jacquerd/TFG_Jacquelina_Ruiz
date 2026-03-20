@@ -44,6 +44,9 @@ def dijkstra(graph, start_vertex, end_vertex):
                 d[v] = d[u]+ peso
                 parent[v] = u
                 heapq.heappush(T, (d[v], v))
+                #metemos el vértice v con su nueva distancia => el vértice v puede estar
+                #varias veces en T con distintas distancias, pero como heap saca primero los números
+                #más pequeños, la versión más corta saldrá primero
 
     #pasamos a reconstruir el camino de start_vertex a end_vertex
     #(lo reconstruimos desde end_vertex --> ...-->start_vertex y luego le damos la vuelta)
