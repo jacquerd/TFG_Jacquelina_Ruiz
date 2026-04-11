@@ -4,23 +4,19 @@ import heapq
 #Hemos quitado la función estimado_minimo(T, d) ya que ahora no es necesaria
 
 def dijkstra(graph, start_vertex, end_vertex):
-    d = {}
+    if start_vertex==end_vertex:
+        return [start_vertex]
+    
+
+    d = {node: float('inf') for node in graph.nodes()}
     d[start_vertex] = 0
-
-    parent = {}
-    parent[start_vertex] = -1
-
-    resto = list(graph.nodes())
-
-    for vertex in resto: 
-        if vertex != start_vertex:
-            parent[vertex] = -1
-            d[vertex] = float('inf')
+    
+    parent = {node: -1 for node in graph.nodes()}
     
     T = [(0, start_vertex)] #T es ahora la cola de prioridad
     procesados = set() 
     
-    while T!=[]:
+    while T:
         #Sacamos el vértice u con el estimado más pequeño directamente de T
         dist, u = heapq.heappop(T)
 

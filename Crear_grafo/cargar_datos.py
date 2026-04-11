@@ -1,5 +1,5 @@
 import pandas as pd
-from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import StandardScaler
 import sys #para salir del programa si hay error
 
 #Cargamos el archivo csv
@@ -33,7 +33,7 @@ audio_features = ['danceability', 'energy', 'key', 'loudness', 'mode',
                     'valence', 'tempo']
 
 #IMPORTANTE: Normalizamos los valores
-scaler = MinMaxScaler()
+scaler = StandardScaler()
 
 #Sobre escribimos los datos ya normalizados
 df[audio_features] = scaler.fit_transform(df[audio_features])

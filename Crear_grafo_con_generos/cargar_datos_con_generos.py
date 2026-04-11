@@ -1,5 +1,5 @@
 import pandas as pd
-from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import StandardScaler
 import sys #para salir del programa si hay error
 
 #Vamos a mapear los géneros a 8 "super-géneros" principales
@@ -81,11 +81,11 @@ print(f"Filas finales tras limpieza y filtrado: {len(df)}")
 
 #Definimos las columnas que son atributos de audio (numéricos)
 audio_features = ['danceability', 'energy', 'key', 'loudness', 'mode',
-                    'speechiness', 'acousticness', 'instrumentalness', 'liveness',
-                    'valence', 'tempo']
+                  'speechiness', 'acousticness', 'instrumentalness', 'liveness',
+                  'valence', 'tempo']
 
 #IMPORTANTE: Normalizamos los valores
-scaler = MinMaxScaler()
+scaler = StandardScaler()
 
 #Sobre escribimos los datos ya normalizados
 df[audio_features] = scaler.fit_transform(df[audio_features])

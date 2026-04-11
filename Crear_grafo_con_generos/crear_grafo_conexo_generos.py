@@ -44,10 +44,9 @@ start_time = time.time() #veamos cuánto se tarda en crear el grafo con k-nn
 features = ['danceability', 'energy', 'loudness','speechiness', 'acousticness', 
             'instrumentalness','valence', 'tempo']
 
-#IMPORTANTE: Escalar los datos para que todas las características estén en igualdad de condiciones ante k-nn
-scaler = StandardScaler()
-features_scaled = scaler.fit_transform(df[features])
-df_scaled = pd.DataFrame(features_scaled, columns=features)
+#Los datos ya estaban escalados (importante para que todas las características estén en igualdad de condiciones 
+#ante k-nn)
+df_scaled = df[features]
 
 #Definimos k objetivo: número de vecinos finales que queremos en el grafo
 k_objetivo = 11
