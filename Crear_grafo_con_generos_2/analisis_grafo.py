@@ -11,6 +11,7 @@ G = nx.from_pandas_edgelist(df_edges, 'source', 'target', ['weight', 'source_gen
 n_nodos = G.number_of_nodes()
 n_aristas = G.number_of_edges()
 
+print("Información sobre el grafo:")
 print(f"En total hay {n_nodos} canciones (nodos)")
 print(f"En total hay {n_aristas} conexiones (aristas)")
 
@@ -20,7 +21,7 @@ media_grados = sum(grados) / n_nodos
 
 print(f"Grado Medio: {media_grados:.2f}")
 print(f"Grado Máximo: {max(grados)} (Canción súper conectada)")
-print(f"Grado Mínimo: {min(grados)} (Canción periférica)")
+print(f"Grado Mínimo: {min(grados)} (Canción periférica) \n")
 
 #2. Análisis de pesos
 pesos_naturales = df_edges[df_edges['weight'] < 1.0]
