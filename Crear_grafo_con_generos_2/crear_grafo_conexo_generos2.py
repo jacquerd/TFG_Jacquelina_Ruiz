@@ -51,7 +51,7 @@ df.reset_index(drop=True, inplace=True) #para que los indices de knn coincidan c
 
 start_time = time.time() #veamos cuánto se tarda en crear el grafo con k-nn
 
-#definimos las características de las canciones(hemos cogido las más relevantas y quitado key, mode, liveness)
+#definimos las características de las canciones
 features = ['danceability', 'energy', 'loudness','speechiness', 'acousticness', 
             'instrumentalness','valence', 'tempo']
 

@@ -17,7 +17,8 @@ df = df.drop_duplicates(subset=['track_name', 'track_artist'], keep='first')
 df = df.reset_index(drop=True)
 print(f"Filas finales tras limpieza y filtrado: {len(df)}")
 
-#Definimos las columnas que son atributos de audio (numéricos)
+#Definimos las características de las canciones. Seleccionamos aquellas que son atributos numéricos y nos quedamos
+#con las más relevantes (hemos quitado key, mode, liveness)
 audio_features = ['danceability', 'energy', 'key', 'loudness', 'mode',
                   'speechiness', 'acousticness', 'instrumentalness', 'liveness',
                   'valence', 'tempo']
