@@ -25,8 +25,6 @@ audio_features = ['danceability', 'energy', 'key', 'loudness', 'mode',
 
 #IMPORTANTE: Normalizamos los valores
 scaler = StandardScaler()
-
-#Sobreescribimos los datos ya normalizados
 df[audio_features] = scaler.fit_transform(df[audio_features])
 
 #Guardamos el dataset ya procesado
