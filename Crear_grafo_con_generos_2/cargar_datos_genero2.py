@@ -10,7 +10,7 @@ try:
 except FileNotFoundError:
     sys.exit()
 
-#Eliminamos las canciones con titulos duplicados (nos quedamos con la primera ocurrencia)
+#Eliminamos las canciones con títulos duplicados (nos quedamos con la primera ocurrencia)
 df = df.drop_duplicates(subset=['track_name', 'track_artist'], keep='first')
 
 #después de filtrar, reiniciamos los índices
