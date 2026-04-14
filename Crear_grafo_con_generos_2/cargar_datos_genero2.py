@@ -20,6 +20,7 @@ print(f"Filas finales tras limpieza y filtrado: {len(df)}")
 #Elegimos las variables que vamos a escalar
 features_to_scale = ['danceability', 'energy', 'loudness', 'speechiness', 'acousticness', 'instrumentalness','valence', 'tempo']
 
+#Escalamos los valores
 scaler = StandardScaler()
 df[features_to_scale] = scaler.fit_transform(df[features_to_scale])
 
