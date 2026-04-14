@@ -17,15 +17,13 @@ df = df.drop_duplicates(subset=['track_name', 'track_artist'], keep='first')
 df = df.reset_index(drop=True)
 print(f"Filas finales tras limpieza y filtrado: {len(df)}")
 
-#Definimos las características de las canciones. Seleccionamos aquellas que son atributos numéricos y nos quedamos
-#con las más relevantes (hemos quitado key, mode, liveness)
-audio_features = ['danceability', 'energy', 'key', 'loudness', 'mode',
-                  'speechiness', 'acousticness', 'instrumentalness', 'liveness',
-                  'valence', 'tempo']
+#Elegimos las variables que vamos a escalar
+features_to_scale = ['danceability', 'energy', 'loudness', 'speechiness', 'acousticness', 'instrumentalness','valence', 'tempo']
 
-#IMPORTANTE: Normalizamos los valores
 scaler = StandardScaler()
-df[audio_features] = scaler.fit_transform(df[audio_features])
+df[features_to_scale] = scaler.fit_transform(df[features_to_scale])
+
+#key y mode siguen en el dataframe pero con sus valores originales
 
 #Guardamos el dataset ya procesado
 df.to_csv('dataset_procesado_generos2.csv', index=False)
