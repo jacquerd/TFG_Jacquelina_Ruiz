@@ -11,7 +11,7 @@ def breadth_first_search(graph, start_vertex, end_vertex):
     # Inicializar la cola vacía Q
     Q = deque()
 
-    parents = {start_vertex: None}
+    parent = {start_vertex: None}
 
     #Metemos al vértice inicial en la cola
     Q.append(start_vertex)
@@ -21,21 +21,21 @@ def breadth_first_search(graph, start_vertex, end_vertex):
         x = Q.popleft()
 
         for j in graph.neighbors(x): #recorremos los vecinos de x
-            if j not in parents: #si no hemos procesado el vértice j
-                parents[j] = x 
+            if j not in parent: #si no hemos procesado el vértice j
+                parent[j] = x 
                 
                 if j == end_vertex: #hemos llegado al vértice destino
-                    return camino(end_vertex,parents)
+                    return camino(end_vertex,parent)
 
                 Q.append(j) #Metemos al vértice j en la cola 
     
     return None #no hemos encontrado un camino de start_vertex a end_vertex
 
 
-def camino(end_vertex, parents):
+def camino(end_vertex, parent):
     solucion = []
     v = end_vertex
     while v != None:
         solucion.append(v)
-        v = parents[v]
+        v = parent[v]
     return solucion[::-1]
