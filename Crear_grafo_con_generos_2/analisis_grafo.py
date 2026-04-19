@@ -36,7 +36,7 @@ print(f"Conexiones de rescate (Penalización x10): {len(pesos_rescate)}")
 #3. Histograma con los pesos
 plt.figure(figsize=(10, 6))
 
-sns.histplot(df_edges, bins=50, kde=True, color = 'blue') 
+sns.histplot(df_edges['weight'], bins=50, kde=True, color = 'blue')
 plt.title('Distribución de Pesos')
 plt.xlabel('Peso de la arista (Distancia euclídea + Penalización)')
 plt.ylabel('Cantidad de Conexiones')
