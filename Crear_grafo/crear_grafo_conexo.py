@@ -25,11 +25,9 @@ start_time = time.time() #veamos cuánto se tarda en crear el grafo con k-nn
 features = ['danceability', 'energy', 'loudness','speechiness', 'acousticness', 
             'instrumentalness','valence', 'tempo']
 
-#IMPORTANTE: Escalar los datos para que todas las características estén en igualdad de condiciones ante k-nn
-scaler = StandardScaler()
-features_scaled = scaler.fit_transform(df[features])
+#Los datos ya estaban escalados
+df_scaled = df[features].copy()
 
-df_scaled = pd.DataFrame(features_scaled, columns=features)
 
 #Hay características a las que les tenemos que dar más peso, ya que si no se podrían juntar, por ejemplo,
 #una cancion de pop con una de rock solo por que las dos son rápidas 
@@ -92,8 +90,6 @@ print(f"G es totalmente conexo?: {es_conexo}")
 if es_conexo:
     G_final = G #el grafo ya era conexo
 else: 
-    num_componentes = nx.number_connected_components(G)
-
     #Vemos cual es el tamaño de la componente conexa más grande
     largest_cc_nodes = max(nx.connected_components(G), key=len)
 
@@ -105,9 +101,9 @@ else:
     #por lo que quitamos las canciones que lo desconectan
     if porcentaje > 90:
         G_final = G.subgraph(largest_cc_nodes).copy()
-        df_final = G_final.nodes()
+        nodos_final = G_final.nodes()
         print(f"Dataset original: {len(df)} canciones")
-        print(f"Dataset final:    {len(df_final)} canciones")
+        print(f"Dataset final:    {len(nodos_final)} canciones")
     else: 
         sys.exit() #si no cubre más del 90% no lo queremos => salimos y no creamos ningún archivo
 

@@ -36,8 +36,8 @@ def breadth_first_search(graph, start_vertex, end_vertex):
         neighbors = list(graph.neighbors(x))
 
         for j in neighbors:
-            if status[j] ==1: #j es un vertice no procesado
-                status[j] = 2 #Marcamos al vértice j como procesado
+            if status[j] == 1: #j es un vertice no procesado
+                status[j] = 2 #Marcamos al vértice j como descubierto
                 parent[j] = x
                 Q.append(j) #Metemos al vértice j en la cola 
     
