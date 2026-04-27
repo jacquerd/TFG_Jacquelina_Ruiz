@@ -56,9 +56,9 @@ sns.histplot(grados, discrete=True, color='blue', alpha=0.8)
 #linea roja indicando la media
 plt.axvline(x=media_grados, color='red', linewidth=2, label=f'Media ({media_grados:.2f})')
 
-plt.title('Distribución de Conexiones por Canción (Grado de los Nodos)')
-plt.xlabel('Número de Conexiones (Grado)')
-plt.ylabel('Cantidad de Canciones')
+plt.title('Distribución de conexiones por canción (Grado de los vértices)')
+plt.xlabel('Número de conexiones (Grado)')
+plt.ylabel('Cantidad de canciones')
 
 plt.legend() 
 plt.grid(axis='y', alpha=0.3)
