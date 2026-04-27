@@ -34,6 +34,8 @@ print(f"Conexiones naturales (Sin penalización): {len(pesos_naturales)}")
 print(f"Conexiones con penalización (Penalización x2): {len(pesos_penalizados)}")
 print(f"Conexiones de rescate (Penalización x10): {len(pesos_rescate)}")
 
+print(f"Peso Medio: {df_edges['weight'].mean():.4f}")
+
 #3. Histograma con los pesos
 plt.figure(figsize=(10, 6))
 
