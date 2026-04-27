@@ -94,10 +94,12 @@ for i in range(len(df)):
             continue
         elif relacion == "admisible":
             peso_final = dist
+            tipo = "admisible"
         else:  #penalizado
             peso_final = dist * 2
+            tipo = "penalizado"
 
-        edges.append((i, vecino, peso_final))
+        edges.append((i, vecino, peso_final, tipo))
         conexiones_hechas += 1
 
         #si ya hemos formado 10(11-1) conexiones, paramos
@@ -109,11 +111,19 @@ for i in range(len(df)):
     if conexiones_hechas == 0:
         vecino_auxiliar = indices[i][1]
         dist_auxiliar = distancias[i][1] * 10.0 # Le ponemos peso alto para que sea el último recurso
-        edges.append((i, vecino_auxiliar, dist_auxiliar))
+        edges.append((i, vecino_auxiliar, dist_auxiliar, "rescate"))
         canciones_aisladas += 1
     
 
-G.add_weighted_edges_from(edges)
+
+for u, v, peso, tipo in edges:
+    if G.has_edge(u, v):
+        #si la arista ya existe, nos quedamos con la demenos peso
+        if peso < G[u][v]['weight']:
+            G[u][v]['weight'] = peso
+            G[u][v]['tipo'] = tipo
+    else:
+        G.add_edge(u, v, weight=peso, tipo=tipo)
 
 #Comprobamos si el grafo que hemos creado es conexo o no
 es_conexo = nx.is_connected(G)
@@ -169,9 +179,10 @@ for u,v,data in G_final.edges(data=True):
     genero_destino = df.loc[v, 'playlist_genre']
 
     peso = data['weight']
+    tipo = data['tipo']
 
     lista_aristas.append({'source': cancion_origen, 'target':cancion_destino, 'weight': peso,
-                          'source_genre': genero_origen, 'target_genre': genero_destino})
+                          'source_genre': genero_origen, 'target_genre': genero_destino, 'tipo': tipo})
  
 df_aristas = pd.DataFrame(lista_aristas)
 

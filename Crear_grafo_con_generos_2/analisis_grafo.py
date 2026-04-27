@@ -24,9 +24,10 @@ print(f"Grado Máximo: {max(grados)} (Canción súper conectada)")
 print(f"Grado Mínimo: {min(grados)} (Canción periférica) \n")
 
 #2. Análisis de pesos
-pesos_naturales = df_edges[df_edges['weight'] < 1.0]
-pesos_penalizados = df_edges[(df_edges['weight'] >= 1.0) & (df_edges['weight'] < 5.0)]
-pesos_rescate = df_edges[df_edges['weight'] >= 5.0]
+
+pesos_naturales   = df_edges[df_edges['tipo'] == 'admisible']
+pesos_penalizados = df_edges[df_edges['tipo'] == 'penalizado']
+pesos_rescate     = df_edges[df_edges['tipo'] == 'rescate']
 
 print("Distribución de los costes de las conexiones")
 print(f"Conexiones naturales (Sin penalización): {len(pesos_naturales)}")
