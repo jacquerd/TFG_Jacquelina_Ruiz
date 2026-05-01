@@ -24,7 +24,7 @@ def breadth_first_search(graph, start_vertex, end_vertex):
         for j in graph.neighbors(x): #recorremos los vecinos de x
             if j not in parent: #si el vértice j no ha sido descubierto
                 parent[j] = x 
-                Q.append(j) #encolamos el vértice j 
+                Q.append(j) #encolamos el vértice j
     
     return None #no hemos encontrado un camino de start_vertex a end_vertex
 

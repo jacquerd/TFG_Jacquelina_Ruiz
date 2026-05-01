@@ -21,13 +21,13 @@ def breadth_first_search(graph, start_vertex, end_vertex):
         x = Q.popleft()
 
         for j in graph.neighbors(x): #recorremos los vecinos de x
-            if j not in parent: #si no hemos procesado el vértice j
+            if j not in parent: #si el vértice j no ha sido descubierto
                 parent[j] = x 
                 
                 if j == end_vertex: #hemos llegado al vértice destino
                     return camino(end_vertex,parent)
 
-                Q.append(j) #Metemos al vértice j en la cola 
+                Q.append(j) #encolamos el vértice j
     
     return None #no hemos encontrado un camino de start_vertex a end_vertex
 
