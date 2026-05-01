@@ -14,13 +14,13 @@ def dijkstra(graph, start_vertex, end_vertex):
     d[start_vertex] = 0
 
     parent = {}
-    parent[start_vertex] = -1
+    parent[start_vertex] = None
 
     resto = list(graph.nodes())
 
     for vertex in resto: 
         if vertex != start_vertex:
-            parent[vertex] = -1
+            parent[vertex] = None
             d[vertex] = float('inf')
     
     #T es la lista de vértices no procesados
@@ -57,7 +57,7 @@ def dijkstra(graph, start_vertex, end_vertex):
     camino = []
     x = end_vertex
     
-    while x != -1:
+    while x is not None:
         camino.append(x)
         x = parent[x]
         

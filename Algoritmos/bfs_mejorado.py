@@ -32,7 +32,7 @@ def breadth_first_search(graph, start_vertex, end_vertex):
 def camino(end_vertex, parent):
     solucion = []
     v = end_vertex
-    while v != None:
+    while v is not None:
         solucion.append(v)
         v = parent[v]
     return solucion[::-1]

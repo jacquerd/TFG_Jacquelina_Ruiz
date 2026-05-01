@@ -45,7 +45,7 @@ def breadth_first_search(graph, start_vertex, end_vertex):
         #hemos encontrado el camino
         camino = []
         v = end_vertex
-        while v != None:
+        while v is not None:
             camino.append(v)
             v = parent[v]
         return camino[::-1] #le damos la vuelta al camino para que salga desde el inicial hasta el final
