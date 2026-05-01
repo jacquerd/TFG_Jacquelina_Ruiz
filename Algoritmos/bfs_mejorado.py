@@ -22,7 +22,7 @@ def breadth_first_search(graph, start_vertex, end_vertex):
             return camino(end_vertex, parent)
 
         for j in graph.neighbors(x): #recorremos los vecinos de x
-            if j not in parent: #si no hemos procesado el vértice j
+            if j not in parent: #si el vertice j no ha sido descubierto
                 parent[j] = x 
                 Q.append(j) #Metemos al vértice j en la cola 
     
