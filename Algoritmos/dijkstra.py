@@ -27,7 +27,7 @@ def dijkstra(graph, start_vertex, end_vertex):
     T = list(graph.nodes())
     u = start_vertex
     
-    while T!=[]:
+    while T:
         #para asegurarnos de que los nodos que quedan son alcanzables
         #(esto es por si el grafo es desconectado)
         if u is None:
