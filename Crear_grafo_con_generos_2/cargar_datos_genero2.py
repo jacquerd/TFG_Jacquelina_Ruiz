@@ -13,6 +13,9 @@ except FileNotFoundError:
 #Eliminamos las canciones con títulos duplicados (nos quedamos con la primera ocurrencia)
 df = df.drop_duplicates(subset=['track_name', 'track_artist'], keep='first')
 
+#Eliminamos filas con valores faltantes en nombre o artista para evitar nodos 'nan - nan'
+df = df.dropna(subset=['track_name', 'track_artist'])
+
 #después de filtrar, reiniciamos los índices
 df = df.reset_index(drop=True)
 print(f"Filas finales tras limpieza y filtrado: {len(df)}")

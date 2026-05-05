@@ -143,11 +143,17 @@ df_edges = pd.read_csv('dataset_final_graph2.csv')
 G = nx.from_pandas_edgelist(df_edges, 'source', 'target', ['weight'])
 
 
-origen = "Shape of You - Ed Sheeran"
-#destino = "Bohemian Rhapsody - Remastered 2011 - Queen"
-#destino = "La Romana - Bad Bunny"
-#destino = "Galway Girl - Martin Jensen Remix - Ed Sheeran"
-destino = "Enter Sandman - Metallica"
+#origen = "Fix You - Coldplay"
+#destino = "Clocks - Coldplay"
+
+#origen = "Mockingbird - Eminem"
+#destino = "Whatever It Takes - Imagine Dragons"
+
+#origen = "Shape of You - Ed Sheeran"
+#destino = "Enter Sandman - Metallica"
+
+origen = "Me Gustas Tu - Manu Chao"
+destino = "Knockin' On Heaven's Door - Guns N' Roses"
 
 #Ejecutamos Dijkstra
 start = time.perf_counter()
