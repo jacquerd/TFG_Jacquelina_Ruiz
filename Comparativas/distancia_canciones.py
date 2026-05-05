@@ -27,7 +27,7 @@ destino3 = "Enter Sandman - Metallica"
 origen4 = "Me Gustas Tu - Manu Chao"
 destino4 = "Knockin' On Heaven's Door - Guns N' Roses"
 
-pares = [ (origen1, destino1), (origen2, destino2), (origen3, destino3), (origen4, destino4)]
+pares = [(origen1, destino1), (origen2, destino2), (origen3, destino3), (origen4, destino4)]
 
 def distancia_euclidea(u, v, features_dict):
     coordenadas_u = features_dict[u]
