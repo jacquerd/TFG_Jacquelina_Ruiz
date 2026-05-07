@@ -10,7 +10,7 @@ def breadth_first_search(graph, start_vertex, end_vertex):
 
     #Para cada vértice de G: status(v)=1
     # 1: no procesado, 2: en cola, 3: procesado
-    status = {node:1 for node in graph.nodes()}
+    status = {node: 1 for node in graph.nodes()}
 
     #añadimos esto para saber el camino del vértice final al inicial
     parent = {node: None for node in graph.nodes()}
@@ -44,10 +44,10 @@ def breadth_first_search(graph, start_vertex, end_vertex):
     if found:
         #hemos encontrado el camino
         camino = []
-        v = end_vertex
-        while v is not None:
-            camino.append(v)
-            v = parent[v]
+        v_actual = end_vertex
+        while v_actual is not None:
+            camino.append(v_actual)
+            v_actual = parent[v_actual]
         return camino[::-1] #le damos la vuelta al camino para que salga desde el inicial hasta el final
     else:
         return None #no hemos encontrado el camino

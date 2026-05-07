@@ -4,15 +4,14 @@ import time
 import heapq
 from collections import deque
 
-
 def breadth_first_search(graph, start_vertex, end_vertex):
     if start_vertex==end_vertex:
-        return [start_vertex]
+        return [start_vertex], 0, 0
     
     # Inicializar la cola vacía Q
     Q = deque()
 
-    parents = {start_vertex: None}
+    parent = {start_vertex: None}
     procesados = 0
 
     #Metemos al vértice inicial en la cola
@@ -24,24 +23,24 @@ def breadth_first_search(graph, start_vertex, end_vertex):
         procesados += 1
 
         for j in graph.neighbors(x): #recorremos los vecinos de x
-            if j not in parents: #si no hemos procesado el vértice j
-                parents[j] = x 
+            if j not in parent: #si no hemos procesado el vértice j
+                parent[j] = x 
                 
                 if j == end_vertex: #hemos llegado al vértice destino
-                    return camino(end_vertex,parents), procesados
+                    camino = []
+                    actual = j
+                    while actual is not None:
+                        camino.append(actual)
+                        actual = parent[actual]
+
+                    camino = camino[::-1]
+                    coste = sum(graph[u][v]['weight'] for u, v in zip(camino[:-1], camino[1:]))
+
+                    return camino, coste, procesados
 
                 Q.append(j) #Metemos al vértice j en la cola 
     
-    return None, procesados #no hemos encontrado un camino de start_vertex a end_vertex
-
-
-def camino(end_vertex, parents):
-    solucion = []
-    v = end_vertex
-    while v != None:
-        solucion.append(v)
-        v = parents[v]
-    return solucion[::-1]
+    return [], float('inf'), procesados #no hemos encontrado un camino de start_vertex a end_vertex
 
 
 def dijkstra(graph, start_vertex, end_vertex):
@@ -51,7 +50,7 @@ def dijkstra(graph, start_vertex, end_vertex):
     d = {node: float('inf') for node in graph.nodes()}
     d[start_vertex] = 0
     
-    parent = {node: -1 for node in graph.nodes()}
+    parent = {node: None for node in graph.nodes()}
     
     T = [(0, start_vertex)] #T es ahora la cola de prioridad
     procesados = set() 
@@ -95,7 +94,7 @@ def dijkstra(graph, start_vertex, end_vertex):
     camino = []
     x = end_vertex
     
-    while x != -1:
+    while x is not None:
         camino.append(x)
         x = parent[x]
         
@@ -137,10 +136,8 @@ time_d = time.perf_counter() - start
 
 #Ejecutamos bfs
 start_bfs = time.perf_counter()
-camino_bfs, nodos_explorados_bfs = breadth_first_search(G, origen, destino)
+camino_bfs, coste_real_bfs, nodos_explorados_bfs = breadth_first_search(G, origen, destino)
 time_bfs = time.perf_counter() - start_bfs
-
-coste_real_bfs = sum(G[u][v]['weight'] for u, v in zip(camino_bfs[:-1], camino_bfs[1:]))
 
 print("Comparativa Dijskstra VS BFS")
 print("-" * 60)

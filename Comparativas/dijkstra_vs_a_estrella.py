@@ -11,7 +11,7 @@ def dijkstra(graph, start_vertex, end_vertex):
     d = {node: float('inf') for node in graph.nodes()}
     d[start_vertex] = 0
     
-    parent = {node: -1 for node in graph.nodes()}
+    parent = {node: None for node in graph.nodes()}
     
     T = [(0, start_vertex)] #T es ahora la cola de prioridad
     procesados = set() 
@@ -52,11 +52,10 @@ def dijkstra(graph, start_vertex, end_vertex):
     if d[end_vertex] == float('inf'): #si la distancia es infinita, no hay camino
         return [], d[end_vertex], nodos_explorados
 
-
     camino = []
     x = end_vertex
     
-    while x != -1:
+    while x is not None:
         camino.append(x)
         x = parent[x]
         
@@ -78,7 +77,7 @@ def a_estrella(graph, start_vertex, end_vertex, heuristica, features_dict):
     d = {node: float('inf') for node in graph.nodes()}
     d[start_vertex] = 0
     
-    parent = {node: -1 for node in graph.nodes()}
+    parent = {node: None for node in graph.nodes()}
 
     T = [(0 + heuristica(start_vertex, end_vertex, features_dict), start_vertex)] 
     procesados = set()
@@ -120,7 +119,7 @@ def a_estrella(graph, start_vertex, end_vertex, heuristica, features_dict):
     camino = []
     x = end_vertex
     
-    while x != -1:
+    while x is not None:
         camino.append(x)
         x = parent[x]
         
