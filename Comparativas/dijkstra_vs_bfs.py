@@ -28,10 +28,10 @@ def breadth_first_search(graph, start_vertex, end_vertex):
                 
                 if j == end_vertex: #hemos llegado al vértice destino
                     camino = []
-                    actual = j
-                    while actual is not None:
-                        camino.append(actual)
-                        actual = parent[actual]
+                    v_actual = j
+                    while v_actual is not None:
+                        camino.append(v_actual)
+                        v_actual = parent[v_actual]
 
                     camino = camino[::-1]
                     coste = sum(graph[u][v]['weight'] for u, v in zip(camino[:-1], camino[1:]))
