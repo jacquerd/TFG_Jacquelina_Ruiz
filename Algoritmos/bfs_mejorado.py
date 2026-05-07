@@ -20,7 +20,7 @@ def breadth_first_search(graph, start_vertex, end_vertex):
 
         if x == end_vertex: #hemos llegado al vértice destino
             camino = []
-            v_actual = j
+            v_actual = x
             while v_actual is not None:
                 camino.append(v_actual)
                 v_actual = parent[v_actual]
@@ -31,5 +31,5 @@ def breadth_first_search(graph, start_vertex, end_vertex):
                 parent[j] = x 
                 Q.append(j) #encolamos el vértice j
     
-    return None #no hemos encontrado un camino de start_vertex a end_vertex
+    return [] #no hemos encontrado un camino de start_vertex a end_vertex
 

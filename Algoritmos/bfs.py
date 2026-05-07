@@ -50,4 +50,4 @@ def breadth_first_search(graph, start_vertex, end_vertex):
             v_actual = parent[v_actual]
         return camino[::-1] #le damos la vuelta al camino para que salga desde el inicial hasta el final
     else:
-        return None #no hemos encontrado el camino
+        return [] #no hemos encontrado el camino
