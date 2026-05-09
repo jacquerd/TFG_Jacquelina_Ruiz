@@ -92,8 +92,8 @@ def mostrar_resultado(titulo, camino, coste, vertices, duracion, generos_dict):
 
 #Cómo se ve la web
 st.title("Playlists de evolución musical 🎵")
-st.write("Selecciona una canción de origen, una canción de destino y el algotirmo que " \
-          "deseas usar para generar una playlist que conecte ambas canciones. También"
+st.write("Selecciona una canción de origen, una canción de destino y el algoritmo que "
+          "deseas usar para generar una playlist que conecte ambas canciones. También "
           "puedes seleccionar los tres algoritmos para compararlos simultáneamente.")
 
 #Cargar los datos
