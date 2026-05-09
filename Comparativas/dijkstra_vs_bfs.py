@@ -34,9 +34,9 @@ def breadth_first_search(graph, start_vertex, end_vertex):
                         v_actual = parent[v_actual]
 
                     camino = camino[::-1]
-                    coste = sum(graph[u][v]['weight'] for u, v in zip(camino[:-1], camino[1:]))
+                    coste_bfs = sum(graph[u][v]['weight'] for u, v in zip(camino[:-1], camino[1:]))
 
-                    return camino, coste, procesados
+                    return camino, coste_bfs, procesados
 
                 Q.append(j) #Metemos al vértice j en la cola 
     
