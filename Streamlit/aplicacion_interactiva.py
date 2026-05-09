@@ -15,7 +15,7 @@ path_edges = "dataset_final_graph2.csv"
 
 #características para la heurística
 features = ["danceability", "energy", "loudness", "speechiness",
-            "acousticness", "instrumentalness", "valence", "tempo",]
+            "acousticness", "instrumentalness", "valence", "tempo"]
 
 #Color asociado a cada género (para que la playlist quede más visual)
 color_genero = { "POP":   "blue", "ROCK":  "red", "RAP":   "orange", 
