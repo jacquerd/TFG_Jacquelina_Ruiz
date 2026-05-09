@@ -10,7 +10,7 @@ grafo_generos = {
     'rock': ['pop'],
     'rap': ['latin', 'r&b'],
     'pop': ['rock', 'edm', 'latin', 'r&b'],
-    'r&b': ['pop', 'latin'],
+    'r&b': ['pop', 'latin', 'rap'],
     'latin': ['pop', 'r&b', 'rap']
 }
 
