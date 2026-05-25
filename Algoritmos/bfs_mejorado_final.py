@@ -1,4 +1,3 @@
-import networkx as nx
 from collections import deque
 
 #Vamos a hacer una última mejora. Para ahorrarnos una iteración del while, vamos a comprobar

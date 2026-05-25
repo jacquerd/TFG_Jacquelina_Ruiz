@@ -1,4 +1,3 @@
-import networkx as nx
 
 def estimado_minimo(T,d):
     vertex_sol = None

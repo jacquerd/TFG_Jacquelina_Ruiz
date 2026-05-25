@@ -1,4 +1,3 @@
-import networkx as nx
 from collections import deque
 
 #Ahora vamos a mejorar el código anterior: eliminamos la inicialización de los nodos y usamos solo el

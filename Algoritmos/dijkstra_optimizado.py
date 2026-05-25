@@ -1,4 +1,3 @@
-import networkx as nx
 import heapq 
 
 #Hemos quitado la función estimado_minimo(T, d) ya que ahora no es necesaria

@@ -1,4 +1,3 @@
-import networkx as nx
 from collections import deque
 
 #Vamos a cambiar el algoritmo para que dados un vértice inicial y final, nos devuelva el camino más corto
