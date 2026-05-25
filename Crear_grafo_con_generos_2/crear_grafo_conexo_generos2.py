@@ -118,7 +118,7 @@ for i in range(len(df)):
 
 for u, v, peso, tipo in edges:
     if G.has_edge(u, v):
-        #si la arista ya existe, nos quedamos con la demenos peso
+        #si la arista ya existe, nos quedamos con la de menos peso
         if peso < G[u][v]['weight']:
             G[u][v]['weight'] = peso
             G[u][v]['tipo'] = tipo
@@ -132,7 +132,6 @@ print(f"G es totalmente conexo?: {es_conexo}")
 if es_conexo:
     G_final = G #el grafo ya era conexo
 else: 
-    num_componentes = nx.number_connected_components(G)
 
     #Vemos cual es el tamaño de la componente conexa más grande
     largest_cc_nodes = max(nx.connected_components(G), key=len)
@@ -151,11 +150,11 @@ else:
     else: 
         sys.exit() #si no cubre más del 90% no lo queremos => salimos y no creamos ningún archivo
 
-#comprobamos también que no haya demasiadas aristas aisladas(si las hubiera tendríamos que aumentar k)
+#comprobamos también que no haya demasiadas canciones aisladas(si las hubiera tendríamos que aumentar k)
 total_canciones = len(df)
 porcentaje_aisladas = (canciones_aisladas / total_canciones) * 100
 
-print(f"Había {porcentaje_aisladas}% de canciónes 'aisladas'")
+print(f"Había {porcentaje_aisladas}% de canciones 'aisladas'")
 if porcentaje_aisladas > 20:
     sys.exit()
 

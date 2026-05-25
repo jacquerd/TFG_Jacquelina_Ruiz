@@ -77,7 +77,7 @@ def mostrar_resultado(titulo, camino, coste, vertices, duracion, generos_dict):
     for i, cancion in enumerate(camino):
         genero = generos_dict.get(cancion, "?") #si la canción no estuviera en el diccionario, obtenemos "?"
         color = color_genero.get(genero, "gray") #si la canción tuviese un género que no está en el diccionario, 
-        #le asignamos el negro
+        #le asignamos el gris
         st.markdown(
             f"<div style='padding:6px 0;'>"
             f"<span style='color:gray; font-family:monospace;'>{i:>2}.</span> "

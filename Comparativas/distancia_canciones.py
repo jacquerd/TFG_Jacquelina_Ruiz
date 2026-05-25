@@ -12,8 +12,6 @@ df_nodes['node_name'] = df_nodes['track_name'] + " - " + df_nodes['track_artist'
 features = ['danceability', 'energy', 'loudness', 'speechiness', 'acousticness', 'instrumentalness', 'valence', 'tempo']
 
 features_dict = {row['node_name']: tuple(row[features]) for c, row in df_nodes.iterrows()}
-generos_dict = {row['node_name']: row['playlist_genre'].upper() for c, row in df_nodes.iterrows()}
-
 
 origen1 = "Fix You - Coldplay"
 destino1 = "Yellow - Coldplay"

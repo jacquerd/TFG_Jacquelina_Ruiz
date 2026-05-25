@@ -139,7 +139,7 @@ start_bfs = time.perf_counter()
 camino_bfs, coste_real_bfs, nodos_explorados_bfs = breadth_first_search(G, origen, destino)
 time_bfs = time.perf_counter() - start_bfs
 
-print("Comparativa Dijskstra VS BFS")
+print("Comparativa Dijkstra VS BFS")
 print("-" * 60)
 print(f"{'Criterio':<20} | {'Dijkstra':<15} | {'BFS'}")
 print("-" * 60)
