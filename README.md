@@ -8,7 +8,7 @@ Departamento de Ciencias de la Computación e Inteligencia Artificial, Universid
 
 Este proyecto consiste en la creación de un modelo para crear playlists de transiciones coherentes entre dos canciones dadas. El problema se reformula como un problema del camino más corto en un grafo no dirigido y ponderado en el que:
 - los **vértices** son canciones
-- las **aristas** se crean usando el algoritmo de k-NearestNeighbors (k-NN) y ciertas reglas de compatibilidades de género
+- las **aristas** se crean usando el algoritmo de k-Nearest Neighbors (k-NN) y ciertas reglas de compatibilidades de géneros
 - los **pesos** de las aristas miden la disimilitud entre canciones
 
 Además, este proyecto implementa y compara tres algoritmos de búsqueda en grafos (BFS, Dijkstra y A*), con los que se crean las playlists buscadas.
@@ -22,13 +22,13 @@ Para ejecutar este proyecto, asegúrese de tener instaladas las siguientes libre
 - **pandas**: Manipulación y limpieza de datos.
 - **scikit-learn**: Implementación de k-NN y escalado de características.
 - **networkx**: Construcción y trabajo con el grafo y análisis de su estructura.
-- **matplotlib** y **seaborn**: Generación de gráficas
-- **streamlit**: Creación de la aplicación interactiva
+- **matplotlib** y **seaborn**: Generación de gráficas.
+- **streamlit**: Creación de la aplicación interactiva.
 
 Puede instalar todas las dependencias necesarias ejecutando:
 
 ```bash
-pip install pandas numpy scikit-learn networkx matplotlib seaborn streamlit
+pip install pandas scikit-learn networkx matplotlib seaborn streamlit
 ```
 
 
@@ -68,7 +68,7 @@ TFG/
 │   ├── dijkstra.py                      # Dijkstra — primera versión (array)
 │   ├── dijkstra_optimizado.py           # Dijkstra — segunda versión (heapq)
 │   └──  A_estrella.py                    # A* con heurística euclídea
-|
+│ 
 ├── Comparativas/                        # Scripts del Capítulo 5
 │   ├── distancia_canciones.py
 │   ├── dijkstra_vs_bfs.py
@@ -114,7 +114,7 @@ python dijkstra_vs_bfs.py                 # Comparación BFS vs Dijkstra
 python dijkstra_vs_a_estrella.py          # Comparación Dijkstra vs A*
 ```
 
-### 4. Lanzar la aplicación interactiva (Sección 5.6)
+### 4. Lanzar la aplicación interactiva (Sección 5.7)
 
 Desde la carpeta `Streamlit/`:
 
@@ -143,4 +143,4 @@ Contiene 32834 canciones con sus características, su género y subgénero.
 
 El código de este repositorio se publica con fines académicos en el marco de un Trabajo de Fin de Grado. Para cualquier reutilización, por favor cita el trabajo:
 
-> Ruiz Dontsova, J. *Algoritmos de búsqueda en grafos: Generación de playlists de evolución musical* Trabajo de Fin de Grado, Grado en Matemáticas, Universidad de Sevilla, 2026.
+> Ruiz Dontsova, J. *Algoritmos de búsqueda en grafos: Generación de playlists de evolución musical*. Trabajo de Fin de Grado, Grado en Matemáticas, Universidad de Sevilla, 2026.
