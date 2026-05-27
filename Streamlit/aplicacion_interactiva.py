@@ -4,14 +4,15 @@ import pandas as pd
 import networkx as nx
 
 from algoritmos import breadth_first_search, dijkstra, a_estrella, heuristica_euclidea
-
+from pathlib import Path
 
 st.set_page_config(page_title = "Playlists de evolución musical", 
                    layout = "wide", initial_sidebar_state="expanded")
 
 
-path_nodes = "dataset_procesado_generos2.csv"
-path_edges = "dataset_final_graph2.csv"
+BASE_DIR = Path(__file__).parent
+path_nodes = BASE_DIR / "dataset_procesado_generos2.csv"
+path_edges = BASE_DIR / "dataset_final_graph2.csv"
 
 #características para la heurística
 features = ["danceability", "energy", "loudness", "speechiness",
