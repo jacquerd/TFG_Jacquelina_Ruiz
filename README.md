@@ -38,8 +38,6 @@ pip install pandas scikit-learn networkx matplotlib seaborn streamlit
 TFG/
 ├── README.md
 │
-├── main.pdf                             # Documento final con la memoria del trabajo
-│
 ├── Crear_grafo/                         # Versión inicial sin géneros (descartada)
 │   ├── canciones.csv
 │   ├── cargar_datos.py
