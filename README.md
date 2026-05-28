@@ -78,7 +78,8 @@ TFG/
     ├── aplicacion_interactiva.py        # Interfaz
     ├── algoritmos.py                    # Versiones finales de BFS/Dijkstra/A*
     ├── dataset_procesado_generos2.csv
-    └── dataset_final_graph2.csv
+    ├── dataset_final_graph2.csv
+    └── requirements.txt
 ```
 
 
