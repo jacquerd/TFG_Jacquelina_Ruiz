@@ -62,7 +62,7 @@ TFG/
 ├── Algoritmos/                          # Implementaciones de los algoritmos (Capítulo 4)
 │   ├── bfs.py                           # BFS — primera versión
 │   ├── bfs_mejorado.py                  # BFS — segunda versión
-│   ├── bfs_final.py            # BFS — versión final
+│   ├── bfs_final.py                     # BFS — versión final
 │   ├── dijkstra.py                      # Dijkstra — primera versión (array)
 │   ├── dijkstra_optimizado.py           # Dijkstra — segunda versión (heapq)
 │   └──  A_estrella.py                    # A* con heurística euclídea
